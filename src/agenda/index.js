@@ -48,8 +48,8 @@ export default class AgendaView extends Component {
     /** callback that gets called when day changes while scrolling agenda list */
     onDaychange: PropTypes.func, //TODO: Should be renamed 'onDayChange'
     /** specify how agenda knob should look like */
-    renderKnob: PropTypes.func, 
-    /** initially selected day */ 
+    renderKnob: PropTypes.func,
+    /** initially selected day */
     selected: PropTypes.any, //TODO: Should be renamed 'selectedDay'
     /** Hide knob button. Default = false */
     hideKnob: PropTypes.bool
@@ -265,7 +265,7 @@ export default class AgendaView extends Component {
 
       this.scrollTimeout = setTimeout(() => {
         if (this._isMounted) {
-          _.invoke(this.props, 'loadItemsForMonth', months[0]);
+          _.invoke(this.props, 'loadItemsForMonth', months);
         }
       }, 200);
     }
