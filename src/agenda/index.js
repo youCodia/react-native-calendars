@@ -214,6 +214,12 @@ export default class AgendaView extends Component {
   onLayout = event => {
     this.viewHeight = event.nativeEvent.layout.height;
     this.viewWidth = event.nativeEvent.layout.width;
+    // Fixes the calendar collapsed issue
+    this.onCalendarListLayout();
+    // Fixes the knob doesn't show when exit the event calendar screen from full calendar and open the screen again.
+    this.setState({
+      calendarScrollable: false
+    });
     this.forceUpdate();
   };
 
